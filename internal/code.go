@@ -7,7 +7,7 @@ import (
 )
 
 func ExtractCodeData() (string, int, string) {
-	pc, file, line, ok := runtime.Caller(2)
+	pc, file, line, ok := runtime.Caller(3)
 	if !ok {
 		file = ""
 		line = 0
@@ -21,7 +21,7 @@ func ExtractCodeData() (string, int, string) {
 	}
 
 	wd, _ := os.Getwd()
-	relPath := strings.TrimPrefix(file, wd)
+	relPath := strings.TrimPrefix(strings.TrimPrefix(file, wd), "/")
 
 	return relPath, line, name
 }
@@ -46,7 +46,7 @@ func ExtractCodeDataRecursive() (string, int, string) {
 		frName := frame.Function
 
 		if strings.HasPrefix(frFile, wd) {
-			relPath = strings.TrimPrefix(frFile, wd)
+			relPath = strings.TrimPrefix(strings.TrimPrefix(frFile, wd), "/")
 			line = frLine
 			name = frName[strings.LastIndex(frName, ".")+1:]
 			break
