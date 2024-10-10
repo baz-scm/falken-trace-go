@@ -1,0 +1,10 @@
+# https://golangci-lint.run/usage/configuration/#config-file
+linters:
+  enable:
+    - errorlint
+    - gci
+    - gofmt
+    - goimports
+    - gosec
+    - nilerr
+    - nolintlint
