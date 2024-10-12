@@ -1,6 +1,8 @@
 package datadog
 
 import (
+	"strconv"
+
 	"github.com/baz-scm/falken-trace-go/internal"
 	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 )
@@ -12,7 +14,7 @@ func addCodeTags(span tracer.Span) {
 		span.SetTag("code.filepath", file)
 	}
 	if line != 0 {
-		span.SetTag("code.lineno", line)
+		span.SetTag("code.lineno", strconv.Itoa(line))
 	}
 	if name != "" {
 		span.SetTag("code.func", name)
