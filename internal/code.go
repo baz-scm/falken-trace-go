@@ -2,6 +2,7 @@ package internal
 
 import (
 	"os"
+	"path/filepath"
 	"runtime"
 	"strings"
 )
@@ -20,10 +21,9 @@ func ExtractCodeData() (string, int, string) {
 		name = fnName[strings.LastIndex(fnName, ".")+1:]
 	}
 
-	wd, _ := os.Getwd()
-	relPath := strings.TrimPrefix(strings.TrimPrefix(file, wd), "/")
+	fileName := filepath.Base(file)
 
-	return relPath, line, name
+	return fileName, line, name
 }
 
 func ExtractCodeDataRecursive() (string, int, string) {
