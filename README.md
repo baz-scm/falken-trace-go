@@ -2,7 +2,7 @@
    <img align="center" width="128px" src="https://avatars.githubusercontent.com/u/140384842?s=200&v=4" />
    <h1 align="center"><b>falken-trace-go</b></h1>
    <p align="center">
-      Enhance OpenTelemetry with pinpointed code-level observability for Python.
+      Enhance OpenTelemetry with pinpointed code-level observability for Golang.
       <br />
       <a href="https://github.com/baz-scm/"><strong>Baz on GitHub »</strong></a>
       <br />
@@ -17,7 +17,7 @@
 
 ## 🚀 What is Falken Trace?
 
-Falken Trace extends OpenTelemetry for Python by pinpointing **file names, function names**, and **line numbers** that generate spans. It addresses gaps in default observability implementations, making tracing faster and more actionable.
+Falken Trace extends OpenTelemetry and Datadog for Go by pinpointing **file names, function names**, and **line numbers** that generate spans. It addresses gaps in default observability implementations, making tracing faster and more actionable.
 
 Discovered while building [Baz](https://baz.co), Falken Trace streamlines debugging and enhances insights into codebase behaviors.
 
