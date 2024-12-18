@@ -1,18 +1,36 @@
-# falken-trace-go
+<div align="center">
+   <img align="center" width="128px" src="https://avatars.githubusercontent.com/u/140384842?s=200&v=4" />
+   <h1 align="center"><b>falken-trace-go</b></h1>
+   <p align="center">
+      Enhance OpenTelemetry with pinpointed code-level observability for Golang.
+      <br />
+      <a href="https://github.com/baz-scm/"><strong>Baz on GitHub »</strong></a>
+      <br />
+      <br />
+      <b>Install</b>
+      <br />
+      <code>go get github.com/baz-scm/falken-trace-go</code>
+   </p>
+</div>
 
-## Getting Started
+---
 
-### Requirements
+## 🚀 What is Falken Trace?
 
-- Go 1.22+
+Falken Trace extends OpenTelemetry and Datadog for Go by pinpointing **file names, function names**, and **line numbers** that generate spans. It addresses gaps in default observability implementations, making tracing faster and more actionable.
 
-### Install
+Discovered while building [Baz](https://baz.co), Falken Trace streamlines debugging and enhances insights into codebase behaviors.
+
+---
+
+## Install
 
 ```shell
 go get github.com/baz-scm/falken-trace-go
 ```
 
-### Usage
+
+## Usage
 #### With dd-trace-go
 Just replace the `tracer.StartSpanFromContext` calls with `falken.StartSpanFromContext`.
 
@@ -57,3 +75,8 @@ func doSomething(ctx context.Context) {
     ...
 }
 ```
+
+# 🔗 Learn More
+Python library: https://github.com/baz-scm/falken-trace-py
+
+Blog post: [Extending OpenTelemetry to Pinpoint Code Elements](https://baz.co/resources/extending-opentelemetry-to-pinpoint-code-elements-our-journey-to-close-the-gap)
