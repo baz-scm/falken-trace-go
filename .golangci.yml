@@ -1,10 +1,26 @@
 # https://golangci-lint.run/usage/configuration/#config-file
-linters:
+version: "2"
+formatters:
   enable:
-    - errorlint
     - gci
     - gofmt
     - goimports
+  exclusions: &common_exclusions
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+linters:
+  enable:
+    - errorlint
     - gosec
     - nilerr
     - nolintlint
+  exclusions:
+    <<: *common_exclusions
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
