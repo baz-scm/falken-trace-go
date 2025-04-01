@@ -1,5 +1,12 @@
 # https://golangci-lint.run/usage/configuration/#config-file
 version: "2"
+exclusions: &common_exclusions
+  generated: lax
+  paths:
+    - third_party$
+    - builtin$
+    - examples$
+
 linters:
   enable:
     - errorlint
@@ -7,24 +14,15 @@ linters:
     - nilerr
     - nolintlint
   exclusions:
-    generated: lax
+    <<: *common_exclusions
     presets:
       - comments
       - common-false-positives
       - legacy
       - std-error-handling
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
 formatters:
   enable:
     - gci
     - gofmt
     - goimports
-  exclusions:
-    generated: lax
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
+  exclusions: *common_exclusions
