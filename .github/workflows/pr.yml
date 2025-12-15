@@ -49,7 +49,7 @@ jobs:
       - name: Run test coverage
         run: go test -cover -coverprofile=coverage.txt ./...
       - name: Upload code coverage results
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: code-coverage
           path: coverage.txt
